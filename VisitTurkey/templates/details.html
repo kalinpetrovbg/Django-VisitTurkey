@@ -1,0 +1,43 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+
+    <div class="container">
+        <div class="d-flex">
+            <div class="d-inline p-2 w-50">
+                <img src="{{ place.image.url }}" class="">
+            </div>
+            <div class="d-inline p-2 w-50">
+                <div class="place-info">
+                    <div class="place-name">
+                        <h2>{{ place.name }}</h2>
+                    </div>
+                    <div class="place-location">
+                        <h5>Location: {{ place.location }}</h5>
+                    </div>
+
+                    {% if is_owner %}
+                    <p>Uploaded by you</p>
+                    {% endif %}
+
+                </div>
+                <h5>Description: </h5>
+                <p class="">{{ place.description }}</p>
+
+                <a href="{% url 'all places' %}" class="btn btn-primary">Back to places</a>
+
+                {% if is_owner %}
+                <a href="{% url 'update place' place.id %}" class="btn btn-success">Edit place</a>
+                <a href="{% url 'delete place' place.id %}" class="btn btn-danger">Delete place</a>
+
+                {% endif %}
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+{% endblock %}

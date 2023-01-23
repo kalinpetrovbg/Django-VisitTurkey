@@ -1,0 +1,46 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+    <div class="container">
+        {% if places %}
+            <h1 class='text-center'>All Places</h1>
+        {% endif %}
+
+        <div class="row">
+            {% for place in places %}
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img src="{{ place.image.url }}" class="card-img-top" alt="image of {{ place.name }}"/>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ place.name }}</h5>
+                            <p class="card-text">{{ place.location }}</p>
+                            <a href="{% url 'place details' place.id %}" class="btn btn-primary">See details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% if places.count != 0 %}
+            <div class="pagination">
+            <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+            {% else %}
+                <a href="/" style="pointer-events: none">Prev</a>
+            {% endif %}
+                <span class="current">
+                {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% else %}
+                    <a href="" style="pointer-events: none">Next</a>
+                {% endif %}
+            </span>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

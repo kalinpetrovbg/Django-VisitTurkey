@@ -1,0 +1,98 @@
+body {
+    background-color: #f0f2f5;
+}
+
+.main-banner{
+}
+
+.bg-light {
+    background-color: #fff !important;
+}
+
+.col-sm img {
+    max-width: 150px;
+}
+
+
+footer {
+    display: none;
+    bottom: 0;
+    height: 2%;
+    background: #bbccdd;
+    border-top: 2px solid #1b1b1b;
+    width: 100%;
+}
+
+footer p {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.form-group {
+    width: 40%;
+    margin: 0 auto;
+    border: 2px #ccc solid;
+    padding: 20px;
+    border-radius: 11px;
+    background: #fff;
+}
+
+.form-group label {
+    margin: 20px 0 5px 10px;
+    font-weight: 600;
+}
+
+.form-group button {
+    margin-top: 15px;
+}
+
+.form-control input {
+    border: 10px
+}
+
+.form-group p {
+    margin-top: 30px;
+}
+
+input[type=file] {
+    margin: 7px;
+    font-size: 14px;
+}
+
+.d-flex .d-inline img {
+    max-width: 100%;
+    border: 1px #ccc solid;
+}
+
+.w-50 {
+    background-color: #fff;
+}
+
+.place-name, .place-location {
+    display: block;
+    width: 100%;
+}
+
+
+.stylized {
+    margin-top: 16px;
+}
+
+
+.card {
+    margin-bottom: 5%;
+}
+
+
+.navbar-expand-lg .navbar-collapse {
+    margin: 0 20px 0 20px;
+}
+
+
+.pagination {
+    margin: 10px;
+}
+
+.text-center {
+    margin: 30px;
+}

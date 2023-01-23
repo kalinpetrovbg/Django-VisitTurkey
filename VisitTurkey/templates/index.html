@@ -1,0 +1,32 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+
+
+
+    <div class="container">
+        <div class="main-banner">
+            <img src="static/banner.jpg">
+        </div>
+
+        {% if places %}
+            <h1 class='text-center'>Most recent places</h1>
+        {% endif %}
+        <div class="row">
+            {% for place in places %}
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ place.image.url }}" class="card-img-top" alt="image of {{ place.name }}"/>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ place.name }}</h5>
+                            <p class="card-text">{{ place.location }}</p>
+                            <a href="{% url 'place details' place.id %}" class="btn btn-primary">See details</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock %}
